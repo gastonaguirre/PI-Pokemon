@@ -1,0 +1,47 @@
+.Card {
+    
+    margin: 20px;
+    width: 250px;
+    height: 300px;
+    font-weight: lighter;
+    color: rgb(255, 238, 0);
+    border-radius: 50px;
+    position: relative;
+    left: 90px;
+}
+.Card:hover {
+  border:1px solid #ffff00;
+    background-color:transparent;
+    color: rgb(251, 255, 0);
+  }
+
+
+.pokemon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+}
+
+.pokeImg{
+    -webkit-filter: drop-shadow(10px 10px 1px black);
+    filter: drop-shadow(10px 10px 1px black);
+position: relative;
+bottom: 30px;
+}
+
+
+.types{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 15px;
+}

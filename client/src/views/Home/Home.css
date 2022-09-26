@@ -1,0 +1,116 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* grid-column: 3 / 9;
+    grid-row: 2 / 14; */
+        position: relative;
+    bottom: 50px;
+
+}
+.filterApi{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    margin: 10px;
+    border:1px solid #ffff00;
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+        color: whitesmoke;
+}
+.filterStrength{ 
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    border:1px solid #ffff00;
+    margin: 10px;
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+    color: whitesmoke;
+}
+.filter{ 
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    border:1px solid #ffff00;
+    margin: 10px;
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+    color: whitesmoke;
+}
+.order{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    margin: 10px;
+    border:1px solid #ffff00;
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+    color: whitesmoke;
+}
+.filterName{
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    color: rgb(251, 255, 0);
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+font-size: 25px;
+left: 20px;
+bottom: 50px;
+}
+.crearHome{
+    float: right ;
+    position: relative;
+    right: 100px;
+    bottom: 200px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+	box-shadow:inset 0px 1px 0px 0px #000000;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #ffff00;
+	/* display:inline-block; */
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+.crearHome:hover {
+	background-color:transparent;
+
+	color: rgb(251, 255, 0);
+}
+
+.buttomHome{
+    float: left ;
+    position: relative;
+    left:  100px;
+    bottom: 220px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+	box-shadow:inset 0px 1px 0px 0px #000000;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #ffff00;
+	/* display:inline-block; */
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+.buttomHome:hover {
+	background-color:transparent;
+
+	color: rgb(251, 255, 0);
+}
+body{
+background-color: black;
+}
+option {
+    background-color: #ffffff;
+color:#000000;
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+}
+.titulo{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+}

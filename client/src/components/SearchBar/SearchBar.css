@@ -1,0 +1,35 @@
+.searchInput{
+	color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border:1px solid #ffff00;
+text-align: center;
+    margin-right: 20px;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+}
+
+
+.pokeSearch {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #ffff00;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+}
+.pokeSearch:hover {
+	background-color:transparent;
+
+	color: rgb(251, 255, 0);
+}
+.pokeSearch:active {
+	position:relative;
+	top:1px;
+}

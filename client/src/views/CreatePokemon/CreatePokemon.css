@@ -1,0 +1,167 @@
+.colum1 {
+    color: rgb(255, 238, 0);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+    float: left;
+    position: relative;
+    left: 150px;
+    bottom: 50px;
+}
+
+.colum2 {
+    color: rgb(255, 238, 0);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+    float: right;
+    position: relative;
+    right: -30px;
+    bottom: 50px;
+}
+
+.nameCreate {
+    color: rgb(255, 238, 0);
+    width: 300px;
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+    float: right;
+    position: relative;
+    left: -50px;
+    bottom: 50px;
+
+}
+
+.nameCreate1 {
+    border: 1px solid #ffff00;
+}
+
+.typesCreate {
+    color: rgb(255, 238, 0);
+    width: 300px;
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+    float: right;
+    position: relative;
+    left: -50px;
+    bottom: 30px;
+}
+
+.imgCreate {
+    color: rgb(255, 238, 0);
+    width: 300px;
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    font-size: 20px;
+    float: right;
+    position: relative;
+    left: -50px;
+    bottom: 50px;
+}
+
+select {
+    background: transparent;
+    border: none;
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: rgb(255, 238, 0);
+    height: 30px;
+    font-size: 20px;
+}
+.butto {
+	box-shadow:inset 0px 1px 0px 0px #000000;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #ffff00;
+	/* display:inline-block; */
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+    float: left ;
+    position: relative;
+    left: 20px;
+    bottom: 100px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+
+}
+.butto:hover {
+	background-color:transparent;
+
+	color: rgb(251, 255, 0);
+}
+
+.titulo{
+    font-size: 45px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    color: rgb(251, 255, 0);
+}
+
+.crear{
+    float: right;
+    position: relative;
+    right: 100px;
+    bottom:125px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+	box-shadow:inset 0px 1px 0px 0px #000000;
+	background-color:transparent;
+	border-radius:6px;
+	border:1px solid #ffff00;
+	/* display:inline-block; */
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+}
+.crear:hover {
+	background-color:transparent;
+
+	color: rgb(251, 255, 0);
+}
+select{
+    color: #ffffff;
+}
+input{
+    color: #ffffff;
+}
+.delete{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin: 10px;
+    position: relative;
+    left: 200px;
+    bottom: 30px;
+    background-image: url(../LandingPage/img/download.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
+}

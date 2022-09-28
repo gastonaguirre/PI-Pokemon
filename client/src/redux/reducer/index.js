@@ -113,6 +113,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
       }
 
+      case 'FLUSH_DETAIL':
+            return{
+                ...state,
+                pokemonsDetail:action.payload,
+            }
+
     default:
       return {
         ...state

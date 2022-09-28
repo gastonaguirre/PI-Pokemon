@@ -1,3 +1,13 @@
+.fondoH{
+    background-image: url(../LandingPage/img/3f2edf17c027241629650be88f43f17b.jpg);
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+padding: 1px;
+
+}
+
+
 .card{
     display: flex;
     flex-wrap: wrap;
@@ -103,14 +113,16 @@ bottom: 50px;
 
 	color: rgb(251, 255, 0);
 }
-body{
-background-color: black;
-}
+
 option {
     background-color: #ffffff;
 color:#000000;
 font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
 }
 .titulo{
+    color: rgb(251, 255, 0);
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+    position: relative;
+    top: 20px;
+    
 }

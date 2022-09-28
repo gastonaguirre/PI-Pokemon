@@ -64,11 +64,9 @@ export default function PokeCreate() {
             types: input.types.filter( pt => pt !== type)
         })
     }
-
-
     return (
-        <div >
-            <h2 className='titulo'>Pokemon Creation</h2>
+        <div className='fondoCP'>
+            <h2 className='tituloCP'>Pokemon Creation</h2>
             <Link to='/home'>
                 <button className='butto'>Back</button>
             </Link>

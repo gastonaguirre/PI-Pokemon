@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getPokeId from '../../redux/action/getPokeId'
+import  { flushDetail }  from '../../redux/action/flush';
 
 import './PokemonDetail.css'
 
@@ -18,9 +19,9 @@ export default function PokemonDetail(props) {
 
 
     return (
-        <div>
+        <div className='fondoD' >
             <Link to='/home'>
-                <button className='button'>Back</button>
+                <button className='button' id="Details_button" onClick={() => dispatch(flushDetail())}>Back</button>
             </Link>
             <div className='detail'>
             <h1>Pokemon:  {pokemon.name}</h1>

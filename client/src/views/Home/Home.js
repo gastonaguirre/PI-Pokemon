@@ -17,9 +17,7 @@ export default function Home() {
     const dispatch = useDispatch();
     const allPokemons = useSelector((state) => state.pokemons);
     const allTypes = useSelector((state) => state.pokemonTypes)
-
     const [order, setOrder] = useState("")
-
     const [current, setCurrent] = useState(1)
     const [pokemonsPage, setPokemonsPage] = useState(12)
     const lastPoke = current * pokemonsPage
@@ -88,7 +86,7 @@ export default function Home() {
             </select>
 
             <select className='filter' onChange={e => handleFilterType(e)}>
-                <option value="ALL" >Type Filter...</option>
+                <option value="ALL" >Type Filter</option>
                 {
                     allTypes?.map(pt => {
                         return <option value={pt.name} key={pt.id}>{pt.name}</option>
@@ -97,15 +95,15 @@ export default function Home() {
             </select>
 
             <select className='filterStrength' onChange={e => handleFilterAttack(e)}>
-                <option value="all">Strength Order...</option>
+                <option value="all">Strength Order</option>
                 <option value="powerfull">Powerfull</option>
                 <option value="weak">Weak</option>
             </select>
 
             <select className='filterApi' onChange={e => handleFilterOrigin(e)}>
-                <option value="pokes">Existent or Created Filter...</option>
-                <option value="api">Existent</option>
-                <option value="db">Created</option>
+                <option value="pokes">Api or db</option>
+                <option value="api">Api</option>
+                <option value="db">db</option>
             </select>
 
             <button className='buttomHome' onClick={e => { handleReload(e) }}> RELOAD</button>

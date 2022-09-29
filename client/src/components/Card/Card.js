@@ -4,7 +4,8 @@ import './card.css'
 
 //hago un destructurin y obtengo los datos necesarios para crear la carta de cada pokemon
 
-export function Card({ name, img, types, id }) {
+export function Card({ name, img, types, id }) 
+{
     return (   
         <div>
           <div className='Card'>
@@ -17,7 +18,7 @@ export function Card({ name, img, types, id }) {
             <br />
             <h5 className='types'>Types: {types.map(pt => "- " + pt.name + " ")}</h5>
             <br />
-        </div>    
+        </div>   
          </div>
     );
 }

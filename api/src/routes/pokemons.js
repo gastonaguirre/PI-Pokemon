@@ -28,8 +28,8 @@ router.get('/', async (req, res) => {
 
 // busca los pokemones por id 
 
-router.get('/:idPokemon', async (req, res) => {
-    const id = req.params.idPokemon;
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
     const idDetails = await idSearch(id);
     try {
         if (!idDetails) {
@@ -63,11 +63,20 @@ router.post('/', async (req, res) => {
         return res.status(201).json(newPoke)
     } catch (error) {
         res.status(404).send(error)
-    }
-
-    
+    }   
 });
 
-
+router.delete("/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+      const pokemon = await Pokemon.findByPk(id);
+      if (pokemon !== null) {
+        await pokemon.destroy();
+        res.status(200).json("Pokemon deleted correctly");
+      }
+    } catch (error) {
+      return res.status(404).json(error);
+    }
+  });
 
 module.exports = router

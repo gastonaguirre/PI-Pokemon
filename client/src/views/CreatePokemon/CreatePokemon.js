@@ -36,10 +36,12 @@ export default function PokeCreate() {
     }
 
     const handleSelect = (e) => {
+        if(input.types.length < 2){
         setInput({
             ...input,
             types: [...input.types, e.target.value]
         })
+    }else{alert("Only 2 types per pokemon!!") }
     }
 
     const handleSubmit = (e) => {
@@ -53,7 +55,6 @@ export default function PokeCreate() {
             e.preventDefault();
             return alert("Please send a valid url image")
         }
-
         dispatch(postPoke(input))
         alert("Pokemon created succesfully!!")
         history.push('/home');
@@ -61,7 +62,7 @@ export default function PokeCreate() {
     const handleDelete  = (type) => {
         setInput({
             ...input,
-            types: input.types.filter( pt => pt !== type)
+            types: input.types.filter(pt => pt !== type)
         })
     }
     return (
@@ -72,7 +73,7 @@ export default function PokeCreate() {
             </Link>
             <br />
             <button id='submit' className='crear' type='submit' onClick={(e) => handleSubmit(e)}>Create Pokemon</button>
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form >
                 
                 
                 <br />
@@ -99,7 +100,7 @@ export default function PokeCreate() {
                 <h5 >{input.height}</h5>
                 <br />
                 <label >Weight:</label>
-                <input type="range" min="0" max="100" id='6' value={input.weight} name="weight" onChange={(e) => handleChange(e)} />
+                <input type="range" min="0" max="1000" id='6' value={input.weight} name="weight" onChange={(e) => handleChange(e)} />
                 <h5 >{input.weight}</h5>
                 </div>
  <div className='nameCreate'>
@@ -109,7 +110,7 @@ export default function PokeCreate() {
 <div className='typesCreate'>
                 <label >Select Types</label>
                 <select id='8' className='nameCreate1' onChange={(e) => handleSelect(e)}>
-                    <option value=""  hidden name="types">Select Types</option>
+                    <option value=""  hidden name="types" >Select Types</option>
                     {
                         allTypes?.map(pt => {
                             return (<option  value={pt.name} key={pt.id}>{pt.name}</option>)
@@ -117,11 +118,11 @@ export default function PokeCreate() {
                     }
                 </select>
                 <ul >
-                    <li className='paginad'>{
+                    <li className='paginad' >{
                         input.types.map(pt =>
                             <h5 >
-                                {allTypes?.find(p => p.name === pt)?.name}
-                                <button className='delete' onClick={() => handleDelete(pt)}></button>
+                                {allTypes?.find(p => p.name === pt)?.name }
+                                <button  className='delete'  onClick={() => handleDelete(pt)}></button>
                             </h5>
                         )}
                     </li>
@@ -130,7 +131,7 @@ export default function PokeCreate() {
                 <br />
                 <div className='imgCreate'>
                 <label >Image</label>
-                <input type="url"  id='9' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
+                <input type="url"  id='10' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
                 </div>
 
             </form>

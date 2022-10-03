@@ -186,3 +186,8 @@ input{
     background-position: center center;
     background-color: transparent;
 }
+.numeros{
+    position: relative;
+    color: #000000;
+    left: 200px;
+}

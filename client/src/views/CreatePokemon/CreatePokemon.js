@@ -21,7 +21,7 @@ export default function PokeCreate() {
         height: 50,
         weight: 50,
         types: [],
-        img: "https://cutt.ly/NVbECPH"
+        img: "https://cutt.ly/NVbECPH",
     })
 
     useEffect(() => {
@@ -73,9 +73,7 @@ export default function PokeCreate() {
             </Link>
             <br />
             <button id='submit' className='crear' type='submit' onClick={(e) => handleSubmit(e)}>Create Pokemon</button>
-            <form >
-                
-                
+            <form >               
                 <br />
                 <div className='colum1'>
                 <label >HP:</label>
@@ -133,10 +131,7 @@ export default function PokeCreate() {
                 <label >Image</label>
                 <input type="url"  id='10' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
                 </div>
-
-            </form>
+       </form>
         </div>
     )
-
-
 }

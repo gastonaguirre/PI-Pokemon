@@ -57,6 +57,13 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false
-    }
+    },
+    like: {
+      type: DataTypes.FLOAT(1),
+      validate: {
+        min: 1,
+        max: 100,
+      }
+    },
   },{ timestamps: false });
 };

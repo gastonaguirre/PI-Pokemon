@@ -20,7 +20,8 @@ const getApi = async () => {
                     types: p.data.types.map( pt => pt.type),
                     img: p.data.sprites.other.home.front_default,
                     attack: p.data.stats[1].base_stat,
-                    db: false
+                    db: false,
+
                 })
             })
             return pokeSaver;

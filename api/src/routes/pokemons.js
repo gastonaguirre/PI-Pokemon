@@ -55,7 +55,6 @@ router.post('/', async (req, res) => {
             height,
             weight,
             img,
-
         })
         let typesDb = await Type.findAll({
             where: { name: types }
@@ -66,6 +65,8 @@ router.post('/', async (req, res) => {
         res.status(404).send(error)
     }   
 });
+
+
 
 router.delete("/:id", async (req, res) => {
     try {

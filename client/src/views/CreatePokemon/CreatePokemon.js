@@ -21,19 +21,28 @@ export default function PokeCreate() {
         height: 50,
         weight: 50,
         types: [],
-        img: "https://cutt.ly/NVbECPH",
+        img: "https://i.ibb.co/cxYrKTg/1581656735-610153-1581656812-noticia-normal-recorte1.jpg",
+        like:""
     })
 
+//trae los tipos de pokemones
+
     useEffect(() => {
-        dispatch(getTypes())
-    }, [dispatch])
+        if(!allTypes.length){
+        dispatch(getTypes())}
+    }, [dispatch, allTypes])
+
+    //hace que se pueda interactuar con el input
 
     const handleChange = (e) => {
+        e.preventDefault();
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
     }
+
+//selecciona un tipo de pokemon
 
     const handleSelect = (e) => {
         if(input.types.length < 2){
@@ -44,21 +53,25 @@ export default function PokeCreate() {
     }else{alert("Only 2 types per pokemon!!") }
     }
 
+//muestra una alerta si no se cumple un requisito
+
     const handleSubmit = (e) => {
-        if (!input.name) {
-            e.preventDefault();
+        e.preventDefault();
+        if (!input.name ) {     
             return alert("Can't create a Pokemon without a name")
-        } else if (!input.types.length) {
-            e.preventDefault();
+        } else if (!input.types.length) {       
             return alert("Please select at least one pokemon type")
-        } else if (!input.img) {
-            e.preventDefault();
+        } else if (!input.img || !/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|svg|png|webp|jpeg)/.test(input.img)) {      
             return alert("Please send a valid url image")
         }
         dispatch(postPoke(input))
         alert("Pokemon created succesfully!!")
         history.push('/home');
+        window.location.reload();
     }
+
+//borra un tipo de pokemon
+
     const handleDelete  = (type) => {
         setInput({
             ...input,
@@ -126,12 +139,15 @@ export default function PokeCreate() {
                     </li>
                 </ul>
                </div> 
+            
                 <br />
                 <div className='imgCreate'>
                 <label >Image</label>
                 <input type="url"  id='10' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
                 </div>
+                
        </form>
+
         </div>
     )
 }

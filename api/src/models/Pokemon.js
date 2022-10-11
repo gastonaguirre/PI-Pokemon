@@ -51,19 +51,12 @@ module.exports = (sequelize) => {
     },
     img: {
       type: DataTypes.STRING,
-       defaultValue: 'https://cutt.ly/NVbECPH'
     },
     createdInDb: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false
     },
-    like: {
-      type: DataTypes.FLOAT(1),
-      validate: {
-        min: 1,
-        max: 100,
-      }
-    },
+
   },{ timestamps: false });
 };

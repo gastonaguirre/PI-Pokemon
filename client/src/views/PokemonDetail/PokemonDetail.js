@@ -14,14 +14,19 @@ export default function PokemonDetail(props) {
     let pokemon = useSelector((state) => state.pokemonsDetail)
     const history = useHistory();
 
+//trae los pokemones filtrados por id 
+
     useEffect(() => {
         dispatch(getPokeId(pokeID))
     }, [dispatch])
+
+// borra un pokemon creado
 
     const handleDelete = () => {
         dispatch(deletePoke(pokeID));
         alert('Pokemon deleted');
         history.push('/home');
+        window.location.reload();
       };
 
     return (

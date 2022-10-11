@@ -27,18 +27,25 @@ export default function Home() {
         setCurrent(pageNumber)
     }
 
+    // trae todos lo pokemones y tipos
+
     useEffect(() => {
         dispatch(getTypes())
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(getPokes());
-    }, [dispatch]);
+        if(!allPokemons.length){
+        dispatch(getPokes());}
+    }, [dispatch, allPokemons]);
+
+    // volver a cargar los pokemones 
 
     const handleReload = (e) => {
         e.preventDefault();
         dispatch(getPokes())
     }
+
+//filtros
 
     const handleOrderPoke = (e) => {
         if (e.target.value === 'A-Z' || e.target.value === 'Z-A') {
@@ -50,11 +57,13 @@ export default function Home() {
     const handleFilterType = (e) => {
         e.preventDefault();
         dispatch(filterTypes(e.target.value))
+        setCurrent(1);
     }
 
     const handleFilterOrigin = (e) => {
         e.preventDefault();
         dispatch(origin(e.target.value))
+        setCurrent(1);
     }
 
     const handleFilterAttack = (e) => {
@@ -65,11 +74,11 @@ export default function Home() {
     }
 
     return (
-        <div className='fondoH'>
-
+        <div >
+<div className='fondoH'></div>
             <h1 className='titulo' >Pokelist</h1>
             <br/>
-            <SearchBar />
+            <SearchBar className='buscar'  />
             <br/>
             <Paginado pokemonsPage={pokemonsPage} allPokemons={allPokemons.length} paginado={paginado} />
             <br/>
@@ -78,9 +87,9 @@ export default function Home() {
                     <button className='crearHome' >Create Pokemon</button>
                 </Link>
             <br/>
-<h3 className='filterName'>filter:</h3>
-            <select className='order' onChange={(e) => handleOrderPoke(e)} >
-                <option value='ALL'>ALL</option>
+<h3 className='filterName' >filter:</h3>
+            <select className='order' onChange={(e) => handleOrderPoke(e)}  >
+                <option value="ALL" >ALL</option>
                 <option value='A-Z'>A-Z</option>
                 <option value='Z-A'>Z-A</option>
             </select>

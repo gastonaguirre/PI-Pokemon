@@ -1,12 +1,18 @@
 .fondoH{
-    background-image: url(../LandingPage/img/3f2edf17c027241629650be88f43f17b.jpg);
-background-position: center center;
+    background-image: url(../LandingPage/img/wallpapersden.com_pokemon-4k-cool_wxl.jpg);
+background-position: center ;
 background-size: cover;
 background-repeat: no-repeat;
-padding: 1px;
-
+width: 100%;
+height: 100%;
+position: fixed;
+margin: -20px 0px;
+padding: 0px;
+opacity: 0.6;
 }
-
+body{
+    background-color: #000000;
+}
 
 .card{
     display: flex;
@@ -125,4 +131,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
     position: relative;
     top: 20px;
     
+}
+.buscar{
+    position: relative;
 }

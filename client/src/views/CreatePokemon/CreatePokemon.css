@@ -186,8 +186,8 @@ input{
     background-position: center center;
     background-color: transparent;
 }
-.numeros{
+.Like{
     position: relative;
     color: #000000;
-    left: 200px;
+    border: 1px solid #ffff00;
 }

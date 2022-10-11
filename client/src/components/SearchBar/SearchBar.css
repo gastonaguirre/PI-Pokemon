@@ -6,6 +6,7 @@
 text-align: center;
     margin-right: 20px;
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+	position: relative;
 }
 
 
@@ -23,6 +24,7 @@ text-align: center;
 	padding:6px 24px;
 	text-decoration:none;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+	position: relative;
 }
 .pokeSearch:hover {
 	background-color:transparent;

@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { getTypes } from '../../redux/action/getTypes'
 import { postPoke } from '../../redux/action/postPoke'
+import swal from 'sweetalert';
 import './CreatePokemon.css'
 
 
@@ -22,15 +23,13 @@ export default function PokeCreate() {
         weight: 50,
         types: [],
         img: "https://i.ibb.co/cxYrKTg/1581656735-610153-1581656812-noticia-normal-recorte1.jpg",
-        like:""
     })
 
 //trae los tipos de pokemones
 
     useEffect(() => {
-        if(!allTypes.length){
-        dispatch(getTypes())}
-    }, [dispatch, allTypes])
+        dispatch(getTypes())
+    }, [dispatch])
 
     //hace que se pueda interactuar con el input
 
@@ -48,11 +47,10 @@ export default function PokeCreate() {
         if(input.types.length < 2){
         setInput({
             ...input,
-            types: [...input.types, e.target.value]
+            types: [...input.types, e.target.value]           
         })
     }else{alert("Only 2 types per pokemon!!") }
     }
-
 //muestra una alerta si no se cumple un requisito
 
     const handleSubmit = (e) => {
@@ -65,9 +63,16 @@ export default function PokeCreate() {
             return alert("Please send a valid url image")
         }
         dispatch(postPoke(input))
-        alert("Pokemon created succesfully!!")
-        history.push('/home');
-        window.location.reload();
+        swal({
+            title:"Pokemon created succesfully!!",
+             text:"want to create another pokemon?",
+             buttons:['no', 'si']}).then(respuesta => {
+                if(!respuesta){
+                    history.push('/home');
+                    window.location.reload();  
+                }
+             }) 
+
     }
 
 //borra un tipo de pokemon
@@ -129,21 +134,23 @@ export default function PokeCreate() {
                     }
                 </select>
                 <ul >
-                    <li className='paginad' >{
-                        input.types.map(pt =>
-                            <h5 >
-                                {allTypes?.find(p => p.name === pt)?.name }
-                                <button  className='delete'  onClick={() => handleDelete(pt)}></button>
-                            </h5>
-                        )}
+                    <li className='paginad' >
+                         {
+                        
+                         input.types.map(type =>
+                            <h5  key={type}>
+                                {allTypes?.find(p => p.name === type).name}  
+                               
+                                <button  className='delete'  onClick={() => handleDelete(type)}></button>
+                           </h5>
+                         )} 
                     </li>
                 </ul>
                </div> 
-            
-                <br />
+     <br />
                 <div className='imgCreate'>
                 <label >Image</label>
-                <input type="url"  id='10' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
+                <input type="url"  id='11' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
                 </div>
                 
        </form>

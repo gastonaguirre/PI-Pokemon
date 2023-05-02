@@ -57,6 +57,11 @@ module.exports = (sequelize) => {
       defaultValue: true,
       allowNull: false
     },
+    ability:{
+      type: DataTypes.TEXT,
+      allowNull: false
+    }
+
 
 
   },{ timestamps: false });

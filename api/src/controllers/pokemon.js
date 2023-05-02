@@ -21,6 +21,7 @@ const getApi = async () => {
                     img: p.data.sprites.other.home.front_default,
                     attack: p.data.stats[1].base_stat,
                     db: false,
+                    ability: p.data.abilities.map(pt => pt.ability).map(pt => pt.name)
 
                 })
             })

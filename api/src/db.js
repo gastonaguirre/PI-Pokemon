@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, } = process.env;
+const {PGDATABASE, PGHOST, PGPASSWORD, PGPORT, PGUSER} = process.env;
 
 let sequelize =
   process.env.NODE_ENV === 'production'
@@ -27,7 +27,7 @@ let sequelize =
         },
         ssl: true
       })
-    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
+    : new Sequelize(`postgresql://${ PGUSER }:${ PGPASSWORD }@${ PGHOST }:${ PGPORT }/${ PGDATABASE}`, {
         logging: false,
         native: false
       });

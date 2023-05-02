@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
 // recibe del front datos para poder crear un nuevo pokemon
 
 router.post('/', async (req, res) => {
-    const { name, hp, attack, defense, speed, height, weight, types, img } = req.body;
+    const { name, hp, attack, defense, speed, height, weight, types, img} = req.body;
     try {
         let newPoke = await Pokemon.create({
             name: name.toLowerCase(),

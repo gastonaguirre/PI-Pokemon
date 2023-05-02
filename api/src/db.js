@@ -7,7 +7,6 @@ const {PGDATABASE, PGHOST, PGPASSWORD, PGPORT, PGUSER} = process.env;
 let sequelize = new Sequelize(`postgresql://${ PGUSER }:${ PGPASSWORD }@${ PGHOST }:${ PGPORT }/${ PGDATABASE }`, {
         logging: false,
         native: false,
-        dialectModule:pg
       });
 const basename = path.basename(__filename);
 

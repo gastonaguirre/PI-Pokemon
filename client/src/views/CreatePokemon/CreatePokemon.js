@@ -112,7 +112,7 @@ export default function PokeCreate() {
                 <h5 >{input.speed}</h5>
                 <br />
                 <label >Height:</label>
-                <input type="range" min="0" max="100" id='5' value={input.height} name="height" onChange={(e) => handleChange(e)} />
+                <input type="range" min="0" max="100"  id='5' value={input.height} name="height" onChange={(e) => handleChange(e)} />
                 <h5 >{input.height}</h5>
                 <br />
                 <label >Weight:</label>
@@ -152,7 +152,6 @@ export default function PokeCreate() {
                 <label >Image</label>
                 <input type="url"  id='11' className='nameCreate1' value={input.img} name="img" placeholder='Image Url...' onChange={(e) => handleChange(e)} />
                 </div>
-                
        </form>
 
         </div>

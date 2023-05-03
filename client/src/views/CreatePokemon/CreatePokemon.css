@@ -186,9 +186,3 @@ input{
     background-position: center center;
     background-color: transparent;
 }
-.like{
-    position: relative;
-    color: #000000;
-    border: 1px solid #ffff00;
-    top: 50px;
-}

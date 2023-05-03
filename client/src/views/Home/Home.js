@@ -31,11 +31,13 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(getTypes())
+        
     }, [dispatch])
 
     useEffect(() => {
         if(!allPokemons.length){
         dispatch(getPokes());}
+        
     }, [dispatch, allPokemons]);
 
     // volver a cargar los pokemones 
@@ -125,6 +127,7 @@ export default function Home() {
                         types={p.types}
                         img={p.img}
                         id={p.id}
+                        ability={p.ability}
                     />
                 ))}
             </div>

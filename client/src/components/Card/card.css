@@ -45,3 +45,8 @@ bottom: 30px;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
     font-size: 15px;
 }
+.ability{
+  color: rgb(251, 255, 0);
+  position: relative;
+  left: 50px;
+}

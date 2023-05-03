@@ -4,10 +4,35 @@ const fs = require('fs');
 const path = require('path');
 const {PGDATABASE, PGHOST, PGPASSWORD , PGPORT , PGUSER} = process.env;
 
-let sequelize = new Sequelize(`postgres://${ PGUSER }:${ PGPASSWORD }@${ PGHOST }:${ PGPORT }/${ PGDATABASE }`, {
-        logging: false,
-        native: false
-      });
+      let sequelize =
+      process.env.NODE_ENV === "production"
+        ? new Sequelize({
+            database: PGDATABASE,
+            dialect: "postgresql",
+            host: PGHOST,
+            port: PGPORT,
+            username: PGUSER,
+            password: PGPASSWORD,
+            pool: {
+              max: 3,
+              min: 1,
+              idle: 10000,
+            },
+            dialectOptions: {
+              ssl: {
+                require: true,
+                // Ref.: https://github.com/brianc/node-postgres/issues/2009
+                rejectUnauthorized: false,
+              },
+              keepAlive: true,
+            },
+            ssl: true,
+          })
+        : new Sequelize(
+            `postgresql://${ PGUSER }:${ PGPASSWORD }@${ PGHOST }:${ PGPORT }/${ PGDATABASE }`,
+            { logging: false, native: false }
+          );
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
